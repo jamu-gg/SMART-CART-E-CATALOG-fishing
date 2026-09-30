@@ -1,0 +1,45 @@
+# ============================================================
+# FILE: pubspec.yaml
+# FUNGSI UTAMA: "Kartu identitas" project Flutter. Berisi nama
+# aplikasi, versi, DAN yang paling penting: daftar PUSTAKA
+# (dependencies) pihak ketiga yang dipakai, serta daftar ASSET
+# (gambar/font) yang mau dibundel ke dalam aplikasi.
+# ============================================================
+
+name: smart_cart_app
+description: "Smart-Cart & E-Catalog - Proyek Terpadu LKPD 4 SMK Negeri 3 Tuban"
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.6
+  provider: ^6.1.2
+  # ^ ⭐ INI BUKTI PALING JELAS UNTUK POIN STATE MANAGEMENT ⭐
+  #   Baris ini mendaftarkan pustaka "provider" dari pub.dev
+  #   (situs resmi pustaka Dart/Flutter). Tanpa baris ini,
+  #   perintah "import 'package:provider/provider.dart';" di
+  #   file-file lain akan GAGAL / error, dan class seperti
+  #   ChangeNotifierProvider, context.watch(), context.read()
+  #   tidak akan bisa dipakai sama sekali.
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/
+    # ^ Mendaftarkan folder assets/ (berisi joran.jpg, kail.jpg,
+    #   dst) agar semua file di dalamnya IKUT DIBUNDEL ke dalam
+    #   file APK/aplikasi saat di-build. Tanpa baris ini, walau
+    #   file gambar ADA di folder assets/, Flutter TIDAK akan
+    #   menyertakannya ke aplikasi, dan Image.asset() akan selalu
+    #   gagal memuat gambar.
